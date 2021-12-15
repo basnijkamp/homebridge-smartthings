@@ -195,9 +195,9 @@ module.exports = class Transforms {
                 } else if (val === 'closing') {
                     return Characteristic.PositionState.DECREASING;
                 } else if (val === 'open') {
-                    return Characteristic.TargetPosition.OPEN;
+                    return Characteristic.TargetPosition.INCREASING;
                 } else if (val === 'closed')
-                    return Characteristic.TargetPosition.CLOSED;
+                    return Characteristic.TargetPosition.DECREASING;
                  else {
                     return Characteristic.PositionState.STOPPED;
                 }
