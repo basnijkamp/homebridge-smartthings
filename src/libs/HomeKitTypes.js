@@ -625,9 +625,6 @@ inherits(Characteristic.CurrentPosition, Characteristic);
 
 Characteristic.CurrentPosition.UUID = '0000006D-0000-1000-8000-0026BB765291';
 
-Characteristic.CurrentPosition.OPEN = 100;
-Characteristic.CurrentPosition.CLOSED = 0;
-
 /**
  * Characteristic "Current Relative Humidity"
  */
@@ -2414,6 +2411,10 @@ Characteristic.TargetPosition = function() {
 inherits(Characteristic.TargetPosition, Characteristic);
 
 Characteristic.TargetPosition.UUID = '0000007C-0000-1000-8000-0026BB765291';
+
+// CUSTOM CODE.
+Characteristic.TargetPosition.OPEN = 100;
+Characteristic.TargetPosition.CLOSED = 0;
 
 /**
  * Characteristic "Target Relative Humidity"
