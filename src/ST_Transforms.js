@@ -190,9 +190,9 @@ module.exports = class Transforms {
                 }
 
             case "windowShade":
-                if (val === 'opening') {
+                if (val === 'opening' || val === 'open') {
                     return Characteristic.PositionState.INCREASING;
-                } else if (val === 'closing') {
+                } else if (val === 'closing' || val === 'closed') {
                     return Characteristic.PositionState.DECREASING;
                 } else {
                     return Characteristic.PositionState.STOPPED;
