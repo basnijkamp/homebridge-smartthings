@@ -705,15 +705,10 @@ module.exports = class DeviceCharacteristics {
             }
             if (!c._events.set) {
                 c.on("set", (value, callback) => {
-                    if (_accessory.hasCommand('close') && value <= 2) {
+                    if ((_accessory.hasCommand('close') && value <= 2) || _accessory.hasCommand('closed')) {
                         _accessory.sendCommand(callback, _accessory, _accessory.context.deviceData, "close");
-                    } else {
-                        let v = value;
-                        if (value <= 2) v = 0;
-                        if (value >= 98) v = 100;
-                        _accessory.sendCommand(callback, _accessory, _accessory.context.deviceData, "setLevel", {
-                            value1: v
-                        });
+                    } else if (_accessory.hasCommand('open')){
+                        _accessory.sendCommand(callback, _accessory, _accessory.context.deviceData, "open");
                     }
                 });
             }
